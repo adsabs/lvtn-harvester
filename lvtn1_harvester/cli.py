@@ -1,15 +1,15 @@
 import click
 
 try:
-    import rutils
+    import lvtn1_utils as utils
 
-    config = rutils.load_config()
-    logger = rutils.setup_logging("lvtn1_harvester.cli")
+    config = utils.load_config()
+    logger = utils.setup_logging("{{cookiecutter.package_name}}.cli")
 except ImportError:
     import logging
 
     config = {}
-    logger = logging.getLogger("lvtn1_harvester.cli")
+    logger = logging.getLogger("{{cookiecutter.package_name}}.cli")
 
 
 @click.group()

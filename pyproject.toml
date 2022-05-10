@@ -20,8 +20,9 @@ packages = [
 
 dependencies = [
     'click>=8.0.3',
-    # 'package @ git+ssh://git@github.com/someorgname/pkg-repo-name@[v1.1]#egg=some-pkg',
-    # 'package @ git+https://github.com/someorgname/pkg-repo-name@[v1.1]#egg=some-pkg',
+    'lvtn1_utils@git+https://github.com/adsabs/lvtn1-utils@main#egg=lvtn1_utils',
+    'Scrapy==2.6.1',
+    # 'package @ git+ssh://git@github.com/adsabs/lvtn1-utils@[v1.1]#egg=lvtn1_utils',
 ]
 
 
@@ -85,7 +86,7 @@ build-backend = "flit_core.buildapi"
 # see setup.py for explanation of these
 [xsetup.entry_points]
 console_scripts = [
-    "lvtn1_harvester=lvtn1_harvester.cli:cli",
+    "harvester=lvtn1_harvester.cli:cli",
 ]
 [xsetup]
 scripts = [
