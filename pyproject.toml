@@ -20,8 +20,9 @@ packages = [
 
 dependencies = [
     'click>=8.0.3',
-    'lvtn1_utils@git+https://github.com/adsabs/lvtn1-utils@main#egg=lvtn1_utils',
     'Scrapy==2.6.1',
+    'lvtn1_utils@git+https://github.com/adsabs/lvtn1-utils@main#egg=lvtn1_utils',
+    'adsingestp@git+https://github.com/adsabs/ADSIngestParser@main#egg=adsingestp',
     # 'package @ git+ssh://git@github.com/adsabs/lvtn1-utils@[v1.1]#egg=lvtn1_utils',
 ]
 

@@ -77,3 +77,17 @@ Technical Objectives:
 - plugin existing (or create a basic scaffolding) extractors
     - we can expect need for refactoring
     - our goal is to make it **simple** to modify/update/plug new/old extractors (this is for providers as well as for extractors; i.e. phases 1 and 2)
+
+
+- use fingerprint to identify unique resource: https://github.com/scrapy/scrapy/blob/06f3d12c1208c380f9f1a16cb36ba2dfa3c244c5/scrapy/utils/request.py#L23
+
+request.request_fingerprint(Request('https://www.google.com?q=fooz'))
+Out[36]: '18c233a7ecb15e92f694db0954079aacd03a8217'
+
+In [37]: request.request_fingerprint(Request('ftp://www.google.com?q=fooz'))
+Out[37]: '51c41bf1f5fd118917cb3988b4ea3ee04729d96c'
+
+
+- use this to test seeds (different versions of a publisher - but only few of those, becusa IngestParser should do the rest)
+
+https://github.com/scrapy/scrapy/blob/06f3d12c1208c380f9f1a16cb36ba2dfa3c244c5/tests/test_linkextractors.py
