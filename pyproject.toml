@@ -5,8 +5,8 @@ description = "Laviattan, layer 1, Harvester District"
 authors = [{ name = "Roman Chyla", email = "roman.chyla@gmail.com"}]
 license = { text = "MIT" }
 readme = "README.md"
-repository = "https://github.com/adsabs/lvtn1-harvester"
-documentation = "https://lvtn1-harvester.readthedocs.io"
+repository = "https://github.com/adsabs/lvtn1_harvester"
+documentation = "https://lvtn1_harvester.readthedocs.io"
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Developers",
@@ -19,7 +19,6 @@ packages = [
 ]
 
 dependencies = [
-    'click>=8.0.3',
     'Scrapy==2.6.1',
     'lvtn1_utils@git+https://github.com/adsabs/lvtn1-utils@main#egg=lvtn1_utils',
     'adsingestp@git+https://github.com/adsabs/ADSIngestParser@main#egg=adsingestp',
@@ -28,13 +27,13 @@ dependencies = [
 
 
 [project.urls]
-Source = "https://github.com/adsabs/lvtn1-harvester"
-Documentation = "https://lvtn1-harvester.readthedocs.io"
+Source = "https://github.com/adsabs/lvtn1_harvester"
+Documentation = "https://lvtn1_harvester.readthedocs.io"
 
 
 [project.optional-dependencies]
 dev = [
-    'black==21.11b1',
+    'black==22.3.0',
     'flake8==4.0.1',
     'isort==5.10.1',
     'pytest==6.2.5',
