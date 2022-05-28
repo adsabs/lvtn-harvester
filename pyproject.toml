@@ -2,7 +2,6 @@
 name = "lvtn1_harvester"
 version = "0.0.1"
 description = "Laviattan, layer 1, Harvester District"
-authors = [{ name = "Roman Chyla", email = "roman.chyla@gmail.com"}]
 license = { text = "MIT" }
 readme = "README.md"
 repository = "https://github.com/adsabs/lvtn1_harvester"
@@ -14,80 +13,86 @@ classifiers = [
     "Operating System :: OS Independent",
     "Topic :: Software Development :: Libraries",
 ]
+
 packages = [
     "lvtn1_harvester",
 ]
 
 dependencies = [
-    'Scrapy==2.6.1',
-    'lvtn1_utils@git+https://github.com/adsabs/lvtn1-utils@main#egg=lvtn1_utils',
-    'adsingestp@git+https://github.com/adsabs/ADSIngestParser@main#egg=adsingestp',
-    # 'package @ git+ssh://git@github.com/adsabs/lvtn1-utils@[v1.1]#egg=lvtn1_utils',
+    "Scrapy==2.6.1",
+    "lvtn1_utils@ git+https://github.com/adsabs/lvtn1-utils@main#egg=lvtn1_utils",
+    "adsingestp@ git+https://github.com/adsabs/ADSIngestParser@main#egg=adsingestp",
 ]
 
+[[project.authors]]
+name = "Roman Chyla"
+email = "roman.chyla@gmail.com"
 
 [project.urls]
 Source = "https://github.com/adsabs/lvtn1_harvester"
 Documentation = "https://lvtn1_harvester.readthedocs.io"
-
-
 [project.optional-dependencies]
 dev = [
-    'black==22.3.0',
-    'flake8==4.0.1',
-    'isort==5.10.1',
-    'pytest==6.2.5',
-    'pyupgrade==2.29.1',
-    'pytest-mock==3.6.1',
-    'pre-commit==2.16.0',
-    'coveralls==3.3.1',
-    'mock==4.0.3',
-    'coverage==6.2',
-    'pytest-cov==3.0.0',
-    'pytest-cookies==0.6.1',
-    'semantic-release==0.1.0',
-]
-docs = [
-    'Sphinx==4.3.1',
-    'myst-parser==0.15.2',
-    'sphinx-rtd-theme==1.0.0'
+    "black==22.3.0",
+    "flake8==4.0.1",
+    "isort==5.10.1",
+    "pytest==6.2.5",
+    "pyupgrade==2.29.1",
+    "pytest-mock==3.6.1",
+    "pre-commit==2.16.0",
+    "coveralls==3.3.1",
+    "mock==4.0.3",
+    "coverage==6.2",
+    "pytest-cov==3.0.0",
+    "pytest-cookies==0.6.1",
+    "semantic-release==0.1.0",
 ]
 
+docs = [
+    "Sphinx==4.3.1",
+    "myst-parser==0.15.2",
+    "sphinx-rtd-theme==1.0.0",
+]
 
 [tool.semantic_release]
 branch = "main"
 version_toml = "pyproject.toml:project.version"
 version_variable = "lvtn1_harvester/version.py:__version__"
 build_command = "flit build"
-
 [tool.pytest.ini_options]
 addopts = "-v -Wdefault --cov=lvtn1_harvester"
 cache_dir = ".tmp/"
-
 [tool.coverage.run]
 data_file = ".tmp/.coverage"
 
 [tool.coverage.report]
 skip_empty = true
 skip_covered = true
-
 [tool.isort]
 profile = "black"
-known_first_party = ["lvtn1_harvester", "tests"]
+known_first_party = [
+    "lvtn1_harvester",
+    "tests",
+]
 
 [tool.black]
-line-length = 99 # override black's default line-length
+line-length = 99
 
 [build-system]
-requires = ["setuptools==60.10.0", "wheel", "flit_core >=3.2,<4", "ppsetuptools==2.0.2"]
-build-backend = "flit_core.buildapi"
-#build-backend = "setuptools.build_meta"
+requires = [
+    "setuptools==60.10.0",
+    "wheel",
+    "flit_core >=3.2,<4",
+    "ppsetuptools==2.0.2",
+]
 
-# see setup.py for explanation of these
+build-backend = "flit_core.buildapi"
+
+[xsetup]
+scripts = [
+]
+
 [xsetup.entry_points]
 console_scripts = [
     "harvester=lvtn1_harvester.cli:cli",
-]
-[xsetup]
-scripts = [
 ]
