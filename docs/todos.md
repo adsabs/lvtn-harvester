@@ -1,0 +1,5 @@
+- Scrapy
+    - feed provider URLs dynamically (from a database)
+    - learn to harvest http
+    - learn to harvest FTP and filesystem
+    - learn to filter links (what gets harvested)

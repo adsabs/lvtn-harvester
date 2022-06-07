@@ -1,10 +1,10 @@
 [project]
-name = "lvtn1_harvester"
+name = "lvtn_harvester"
 version = "0.0.1"
 description = "Laviattan, layer 1, Harvester District"
 license = { text = "MIT" }
 readme = "README.md"
-repository = "https://github.com/adsabs/lvtn1_harvester"
+repository = "https://github.com/adsabs/lvtn_harvester"
 documentation = "https://lvtn1_harvester.readthedocs.io"
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
@@ -15,7 +15,7 @@ classifiers = [
 ]
 
 packages = [
-    "lvtn1_harvester",
+    "lvtn_harvester",
 ]
 
 dependencies = [
@@ -29,8 +29,8 @@ name = "Roman Chyla"
 email = "roman.chyla@gmail.com"
 
 [project.urls]
-Source = "https://github.com/adsabs/lvtn1_harvester"
-Documentation = "https://lvtn1_harvester.readthedocs.io"
+Source = "https://github.com/adsabs/lvtn_harvester"
+Documentation = "https://lvtn_harvester.readthedocs.io"
 [project.optional-dependencies]
 dev = [
     "black==22.3.0",
@@ -44,7 +44,6 @@ dev = [
     "mock==4.0.3",
     "coverage==6.2",
     "pytest-cov==3.0.0",
-    "pytest-cookies==0.6.1",
     "semantic-release==0.1.0",
 ]
 
@@ -57,10 +56,10 @@ docs = [
 [tool.semantic_release]
 branch = "main"
 version_toml = "pyproject.toml:project.version"
-version_variable = "lvtn1_harvester/version.py:__version__"
+version_variable = "lvtn_harvester/version.py:__version__"
 build_command = "flit build"
 [tool.pytest.ini_options]
-addopts = "-v -Wdefault --cov=lvtn1_harvester"
+addopts = "-v -Wdefault --cov=lvtn_harvester"
 cache_dir = ".tmp/"
 testpaths = [
     "tests",
@@ -75,7 +74,7 @@ skip_covered = true
 [tool.isort]
 profile = "black"
 known_first_party = [
-    "lvtn1_harvester",
+    "lvtn_harvester",
     "tests",
 ]
 
@@ -98,5 +97,5 @@ scripts = [
 
 [xsetup.entry_points]
 console_scripts = [
-    "harvester=lvtn1_harvester.cli:cli",
+    "harvester=lvtn_harvester.cli:cli",
 ]

@@ -13,7 +13,7 @@ ROBOTSTXT_OBEY = True
 SPIDER_MODULES = ["crawler.spiders"]
 NEWSPIDER_MODULE = "crawler.spiders"
 
-DOWNLOAD_HANDLERS = {"ftp": "crawler.handlers.FtpListingHandler"}
+DOWNLOAD_HANDLERS = {"ftptree": "crawler.handlers.FtpListingHandler"}
 
 
 # -------------
