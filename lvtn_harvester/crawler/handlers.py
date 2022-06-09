@@ -1,7 +1,7 @@
 import json
 
 from scrapy.core.downloader.handlers.ftp import FTPDownloadHandler
-from scrapy.http import TextResponse
+from scrapy.http import Response
 from twisted.protocols.ftp import FTPFileListProtocol
 
 
@@ -27,5 +27,5 @@ class FtpListingHandler(FTPDownloadHandler):
 
     def _build_response(self, result, request, protocol):
         self.result = result
-        body = json.dumps(protocol.files)
-        return TextResponse(url=request.url, status=200, body=body)
+        body = json.dumps(protocol.files).encode("utf8")
+        return Response(url=request.url, status=200, body=body)

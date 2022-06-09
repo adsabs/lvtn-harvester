@@ -9,7 +9,7 @@ def run():
     process = CrawlerProcess(get_project_settings())
 
     # 'followall' is the name of one of the spiders of the project.
-    process.crawl("quotes", domain="localhost")
+    process.crawl("seeds", domain="localhost")
     process.start()  # the script will block here until the crawling is finished
 
 
