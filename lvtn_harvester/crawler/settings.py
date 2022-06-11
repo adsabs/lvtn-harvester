@@ -7,13 +7,30 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
+from .items import ItemFruit, ItemSeed
+
 BOT_NAME = "crawler"
 ROBOTSTXT_OBEY = True
 
-SPIDER_MODULES = ["crawler.spiders"]
-NEWSPIDER_MODULE = "crawler.spiders"
+SPIDER_MODULES = ["lvtn_harvester.crawler.spiders"]
+NEWSPIDER_MODULE = "lvtn_harvester.crawler.spiders"
 
-DOWNLOAD_HANDLERS = {"ftptree": "crawler.handlers.FtpListingHandler"}
+DOWNLOAD_HANDLERS = {"ftptree": "lvtn_harvester.crawler.handlers.FtpListingHandler"}
+ITEM_PIPELINES = {
+    "lvtn_harvester.crawler.pipelines.FruitPipeline": 300,
+}
+FEEDS = {
+    "items.jsonl": {
+        "format": "jsonlines",
+        "encoding": "utf8",
+        "store_empty": False,
+        "item_classes": [ItemSeed, ItemFruit],
+        "fields": None,
+        "item_export_kwargs": {
+            "export_empty_fields": True,
+        },
+    },
+}
 
 
 # -------------

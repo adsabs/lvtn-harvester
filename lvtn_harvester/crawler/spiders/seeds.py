@@ -4,6 +4,8 @@ from urllib.parse import urlparse
 
 import scrapy
 
+from lvtn_harvester.crawler.items import ItemFruit, ItemSeed
+
 
 class SeedsSpider(scrapy.Spider):
     name = "seeds"
@@ -28,11 +30,15 @@ class SeedsSpider(scrapy.Spider):
                 if f["filetype"] == "d":
                     path = os.path.join(response.url, f["filename"])
                     request = scrapy.Request(path, meta=response.request.meta)
-                    yield request
+                    yield ItemSeed(request=request)
                 if f["filetype"] == "-":
                     path = os.path.join(basepath, f["filename"])
                     path = path.replace("ftptree:", "ftp:")
                     request = scrapy.Request(path, meta=response.request.meta)
-                    yield request
-        elif url.scheme == "ftp":
-            print(response.body)
+                    yield ItemFruit(request=request)
+
+        else:
+            # normally, this branch should not happen inside 'seed' parser
+            # it means the spider has harvested contents from https/ftp/oai...
+            # we'll return the appropriate Item
+            yield ItemFruit(request=response.request, payload=response.body, response=response)

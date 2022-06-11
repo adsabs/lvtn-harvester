@@ -4,10 +4,12 @@
 # See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 
 
-# useful for handling different item types with a single interface
-from itemadapter import ItemAdapter
+from .items import ItemFruit, ItemSeed
 
 
-class CrawlerPipeline:
+class FruitPipeline:
     def process_item(self, item, spider):
-        return item
+        if isinstance(item, ItemSeed):
+            return item
+        elif isinstance(item, ItemFruit):
+            return item
