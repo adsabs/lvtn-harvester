@@ -3,7 +3,7 @@
 To use this package, import it:
 
 ```python
-import lvtn1_harvester
+import lvtn_harvester
 ```
 
 TODO: Document usage

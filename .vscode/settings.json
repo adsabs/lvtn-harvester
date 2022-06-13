@@ -9,7 +9,7 @@
     }
   },
   "terminal.integrated.env.linux": {
-    // for debugging please *ALSO* see .env file in the root of the project # noqa
+    // for debugging please *ALSO* see .env file in the root of the project
     "PYTHONPATH": ".${pathSeparator}tests${pathSeparator}${workspaceFolder}${pathSeparator}${env:PYTHONPATH}"
   },
   "python.analysis.extraPaths": [],

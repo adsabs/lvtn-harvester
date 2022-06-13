@@ -8,7 +8,7 @@ You can contribute in many ways:
 
 ### Report Bugs
 
-Report bugs at <https://github.com/adsabs/lvtn1_harvester/issues>.
+Report bugs at <https://github.com/adsabs/lvtn_harvester/issues>.
 
 If you are reporting a bug, please include:
 
@@ -26,11 +26,11 @@ Look through the GitHub issues for features. Anything tagged with "enhancement" 
 
 ### Write Documentation
 
-lvtn1-harvester could always use more documentation, whether as part of the official lvtn1-harvester docs, in docstrings, or even on the web in blog posts, articles, and such.
+lvtn-harvester could always use more documentation, whether as part of the official lvtn-harvester docs, in docstrings, or even on the web in blog posts, articles, and such.
 
 ### Submit Feedback
 
-The best way to send feedback is to file an issue at <https://github.com/adsabs/lvtn1_harvester/issues>.
+The best way to send feedback is to file an issue at <https://github.com/adsabs/lvtn_harvester/issues>.
 
 If you are proposing a feature:
 
@@ -47,7 +47,7 @@ Ready to contribute? Here's how to set yourself up for local development.
 2.  Clone your fork locally:
 
     ```shell
-    $ git clone git@github.com:your_name_here/lvtn1_harvester.git
+    $ git clone git@github.com:your_name_here/lvtn_harvester.git
     ```
 
 3.  Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development:
@@ -69,7 +69,7 @@ Ready to contribute? Here's how to set yourself up for local development.
 5.  When you're done making changes, check that your changes pass flake8 and the tests, including testing other Python versions with tox:
 
     ```shell
-    $ flake8 lvtn1_harvester tests
+    $ flake8 lvtn_harvester tests
     $ pytest
     ```
 

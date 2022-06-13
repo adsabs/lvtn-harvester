@@ -18,7 +18,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = "lvtn1-harvester"
+project = "lvtn-harvester"
 copyright = "2020, Roman Chyla"
 author = "Roman Chyla"
 

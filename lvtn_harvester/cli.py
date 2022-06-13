@@ -4,12 +4,12 @@ try:
     import lvtn1_utils as utils
 
     config = utils.load_config()
-    logger = utils.setup_logging("lvtn1_harvester.cli")
+    logger = utils.setup_logging("lvtn_harvester.cli")
 except ImportError:
     import logging
 
     config = {}
-    logger = logging.getLogger("lvtn1_harvester.cli")
+    logger = logging.getLogger("lvtn_harvester.cli")
 
 
 @click.group()
