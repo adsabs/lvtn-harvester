@@ -19,7 +19,13 @@ DOWNLOAD_HANDLERS = {"ftptree": "lvtn_harvester.crawler.handlers.FtpListingHandl
 ITEM_PIPELINES = {
     "lvtn_harvester.crawler.pipelines.FruitPipeline": 300,
 }
+
+FEED_EXPORTERS = {"database": "lvtn_harvester.storage.DatabaseExporter"}
+
 FEEDS = {
+    "sqlite:///": {
+        "format": "database",
+    },
     "items.jsonl": {
         "format": "jsonlines",
         "encoding": "utf8",
