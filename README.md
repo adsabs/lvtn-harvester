@@ -28,8 +28,13 @@ Install locally into virtualenv
 ```bash
 virtualenv .venv
 source .venv/bin/activate
-python rtool.py install
+pip install .[dev]
+pip install .
+pre-commit install
+pre-commit install --hook-type commit-msg
 ```
+
+
 
 ## Documentation
 

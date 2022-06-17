@@ -1,5 +1,7 @@
 import unittest
 
+from lvtn1_utils import get_date
+
 from lvtn_harvester import models
 from tests import TestCaseDatabase
 
@@ -35,6 +37,16 @@ class TestName(TestCaseDatabase):
             self.assertEqual(
                 fruit.seed.provider.meta, '{"user": "test", "password": "test"}', "not there"
             )
+
+        # update existing
+        with self.app.db_session() as session:
+            fruit = models.Fruit(
+                url="https://foo.bar",
+                seed=seed,
+                fingerprint="foobaz",
+                last_accessed=get_date(),
+            )
+            session.add(fruit)
 
 
 if __name__ == "__main__":

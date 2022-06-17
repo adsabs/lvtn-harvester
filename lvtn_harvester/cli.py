@@ -1,7 +1,7 @@
 import click
 
 try:
-    import lvtn1_utils as utils
+    import lvtn_utils as utils
 
     config = utils.load_config()
     logger = utils.setup_logging("lvtn_harvester.cli")
