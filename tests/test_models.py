@@ -46,7 +46,7 @@ class TestName(TestCaseDatabase):
                 fingerprint="foobaz",
                 last_accessed=get_date(),
             )
-            session.add(fruit)
+            session.execute(self.app.upsert_stmt(fruit))
 
 
 if __name__ == "__main__":

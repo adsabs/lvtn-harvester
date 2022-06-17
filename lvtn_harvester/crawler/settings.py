@@ -20,11 +20,13 @@ ITEM_PIPELINES = {
     "lvtn_harvester.crawler.pipelines.FruitPipeline": 300,
 }
 
-FEED_EXPORTERS = {"database": "lvtn_harvester.storage.DatabaseExporter"}
+FEED_EXPORTERS = {"database": "lvtn_harvester.crawler.exporters.DatabaseExporter"}
 
+FEED_STORAGES = {"postgresql": "lvtn_harvester.crawler.storages.DBFeedStorage"}
 FEEDS = {
     "sqlite:///": {
         "format": "database",
+        # "item_classes": [ItemSeed, ItemFruit],
     },
     "items.jsonl": {
         "format": "jsonlines",

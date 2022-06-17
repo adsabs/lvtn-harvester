@@ -8,17 +8,14 @@ from lvtn_harvester.crawler.items import ItemFruit, ItemSeed
 
 
 class SeedsSpider(scrapy.Spider):
-    name = "seeds"
-    allowed_domains = ["localhost"]
-    start_urls = ["ftptree://localhost:9921"]
+    name = "adscrawler"
 
     def start_requests(self):
-        return [
-            scrapy.Request(
+        for url in self.start_urls:
+            yield scrapy.Request(
                 "ftptree://localhost:9921/",
                 meta={"ftp_user": "test", "ftp_password": "test", "dont_obey_robotstxt": True},
             )
-        ]
 
     def parse(self, response):
         url = urlparse(response.url)
