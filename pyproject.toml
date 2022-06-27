@@ -22,6 +22,8 @@ dependencies = [
     "Scrapy==2.6.1",
     "lvtn_utils@ git+https://github.com/adsabs/lvtn-utils@main#egg=lvtn_utils",
     "adsingestp@ git+https://github.com/adsabs/ADSIngestParser@main#egg=adsingestp",
+    "alembic==1.8.0",
+    "psycopg2==2.9.3",
 ]
 
 [[project.authors]]
@@ -46,7 +48,7 @@ dev = [
     "pytest-cov==3.0.0",
     "semantic-release==0.1.0",
     "testing.postgresql==1.3.0",
-    "psycopg2==2.9.3",
+
 ]
 
 docs = [

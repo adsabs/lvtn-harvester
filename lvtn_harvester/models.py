@@ -1,6 +1,6 @@
 import json
 
-from lvtn1_utils import UTCDateTime, get_date
+from lvtn_utils import UTCDateTime, get_date
 from sqlalchemy import Column, ForeignKey, Integer, String, Text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.ext.hybrid import hybrid_property
